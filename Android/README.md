@@ -1,5 +1,5 @@
 # Android 관련 지식
-- Android 4대 컴포넌트(#android-4대-컴포넌트)
+[- Android 4대 컴포넌트](#android-4대-컴포넌트)
 
 
 ## Android 4대 컴포넌트
