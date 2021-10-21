@@ -1,6 +1,6 @@
 # Android 관련 지식
 - [Android 4대 컴포넌트](#android-4대-컴포넌트)
-
+- [Context란](#context란)
 
 ## Android 4대 컴포넌트
 - 각 컴포넌트들은 하나의 **독립적인 형태**로 존재
@@ -36,3 +36,31 @@ SQLite DB/Web/파일 입출력을 통해 데이터 관리
 컴포넌트에 Action, Data 등을 전달  
 인텐트를 통하여 다른 애플리케이션의 컴포넌트 활성화 가능  
 EX) 액티비티 간의 화면 전환  
+
+
+## Context란
+어플리케이션의 **현재 상태의 맥락(Context)**을 의미  
+Context는 생성된 객체가 **어떤 일이 일어나고 있는지** 알 수 있음  
+Context를 사용하여 Activity, Application의 정보 알 수 있음  
+
+#### 크게 두가지 역할을 하는 **추상 클래스(Abstract Class)**
+- 앱에 관하여 시스템이 관리하고 있는 정보에 접근 : 리소스, 클래스, 어플리케이션 환경정보
+- 안드로이드 시스템 서비스에서 제공하는 API 호출 : startActivity(), bindService()
+
+#### 사용 예시
+1. 리소스 로딩
+2. 새 액티비티 생성
+3. 뷰 생성
+4. 시스템 서비스 얻기
+
+#### Context의 종류
+- Application Context :   
+어떤 context보다 오래 유지됨  
+Application 라이프사이클과 연관  
+Singleton Instance -> 앱이 죽기 전까지 동일한 객체 반환
+- Activity Context :   
+액티비티의 라이프사이클과 연관
+
+#### 메모리 누수 
+메모리 누수를 피하기 위해 Activity Context에는 수명이 긴 참조를 피하고, 되도록이면 Application Context를 사용해야 함  
+Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하고 있을 경우 메모리 누수 발생
