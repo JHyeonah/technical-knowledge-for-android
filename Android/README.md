@@ -39,7 +39,7 @@ EX) 액티비티 간의 화면 전환
 
 
 ## Context란
-어플리케이션의 **현재 상태의 맥락(Context)**을 의미  
+어플리케이션의 **현재 상태의 맥락(Context)** 을 의미  
 Context는 생성된 객체가 **어떤 일이 일어나고 있는지** 알 수 있음  
 Context를 사용하여 Activity, Application의 정보 알 수 있음  
 
