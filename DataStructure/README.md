@@ -2,7 +2,7 @@
 - [자료구조 개요](#자료구조-개요)  
 - [빅오 표기법](#빅오-표기법)
 - [재귀](#재귀)
-
+- [스택&큐](#스택&큐)
 
 ## 자료구조 개요
 
@@ -70,3 +70,34 @@
 함수를 실행하는 중간에 다시 동일한 함수가 실행되면, 해당 함수의 **복사본**을 만들어 실행함  
 **탈출조건**을 구성해야만 함  
 *대표 문제 - 팩토리얼, 피보나치 수열, 하노이의 탑*  
+
+
+## 스택&큐
+선형 자료구조
+
+### 스택(Stack)
+삽입과 삭제가 한쪽 끝에서 이루어지는 순서가 매겨진 리스트  
+LIFO(Last In First Out, 후입선출)  
+push-삽입 pop-삭제  
+
+#### Stack의 Method (Kotlin)
+- empty() : Stack이 비어있는 여부를 boolean으로 반환
+- peek() : Stack의 최상단에 있는 객체를 확인
+- pop() : Stack 최상단의 객체를 제거하고 해당 객체를 return
+- push(E item) : Stack에 최상단 항목으로 삽입
+- search(Object o) : Object를 Stack에서 찾는 method, 최상단 객체를 1로 하여 위치를 찾아줌. 객체가 없을 경우 -1 return
+
+### 큐(Queue)
+데이터의 삽입이 한쪽 끝(rear)에서 이루어지고, 다른쪽 끝(front)에서는 삭제가 이루어지는 리스트  
+FIFO(First In First Out, 선입선출)  
+enqueue-삽입 dequeue-삭제
+
+#### Queue의 Method (Kotlin)
+- add(E e) : Queue에 객체를 추가, 큐에 남은 공간이 없을 경우 throw exception
+- element() : Queue에 가장 먼저 들어간 객체 return
+- offer(E e) : Queue에 객체를 추가(enqueue), exception을 발생시키지 않고 성공 여부 boolean값 return
+- peek() : Queue에 가장 먼저 들어간 객체 확인
+- poll() : Queue에 가장 먼저 들어간 객체 제거 후 return (dequeue), 큐가 비어있다면 null return
+- remove() : Queue에 가장 먼저 들어간 객체 제거 후 return, 큐가 비어있다면 throw exception
+
+
