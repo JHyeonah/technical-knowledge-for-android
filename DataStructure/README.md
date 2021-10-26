@@ -93,10 +93,10 @@ FIFO(First In First Out, 선입선출)
 enqueue-삽입 dequeue-삭제
 
 #### Queue의 Method (Kotlin)
-- add(E e) : Queue에 객체를 추가, 큐에 남은 공간이 없을 경우 throw exception
+- add(E e) : Queue에 객체를 추가, 성공할 경우 true 리턴, 큐에 남은 공간이 없을 경우 throw exception
 - element() : Queue에 가장 먼저 들어간 객체 return
 - offer(E e) : Queue에 객체를 추가(enqueue), exception을 발생시키지 않고 성공 여부 boolean값 return
-- peek() : Queue에 가장 먼저 들어간 객체 확인
+- peek() : Queue에 가장 먼저 들어간 객체 확인, queue가 비어있다면 null return
 - poll() : Queue에 가장 먼저 들어간 객체 제거 후 return (dequeue), 큐가 비어있다면 null return
 - remove() : Queue에 가장 먼저 들어간 객체 제거 후 return, 큐가 비어있다면 throw exception
 
