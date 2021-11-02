@@ -1,6 +1,7 @@
 # Java 관련 지식
 - [Call by value, Call by reference](#call-by-value,-call-by-reference)
 - [Garbage Collection](#garbage-collection)
+- [JVM (Java Virtual Machine)](#jvm-(java-virtual-machine))
 
 ## Call by value, Call by reference
 - Call by Value (값에 의한 호출)  
@@ -51,3 +52,53 @@ Young과 Old의 세부적인 동작은 다르지만 기본적으로 두가지 �
 2. Mark and Sweep
 - Mark: 사용되는 메모리와 사용되지 않는 메모리 식별
 - Sweep: 사용되지 않는 메모리 해제
+
+
+## JVM (Java Virtual Machine)
+
+### JVM이란?
+- java코드를 컴파일하여 얻은 Java Byte Code를 해석하여 OS가 이해할 수 있는 기계어로 바꿔주는 역할
+- Byte Code는 JVM 위에서 OS 상관 없이 실행됨
+- java의 큰 장점이 됨 (OS 종속되지 않음, 어떤 디바이스든 JVM 위에서 실행 가능)
+- JVM은 자동으로 메모리 관리를 해줌
+
+### JVM 구조
+1. Class Loader
+- java 바이트코드를 읽어서 JVM의 Execution Engine이 사용할 수 있도록 Runtime Data Area에 적재  
+
+2. Execution Engine (실행 엔진)
+- 클래스를 실행시키는 역할
+- 바이트코드를 실제로 JVM내부에서 기계가 실행할 수 있는 형태로 변환
+- Interpreter, JIT (Just in Time)  
+
+3. Runtime Data Areas
+- JVM이 프로그램을 수행하기 위해 OS로부터 할당받은 메모리 공간
+- PC Register, JVM Stack, Native Method Stack은 스레드마다 하나씩 생성
+- Heap, Method Area는 모든 스레드 공유
+
+**PC Register**  
+현재 수행중인 JVM 명령의 주소를 가짐  
+스레드가 시작할 때 생성    
+
+**JVM Stack**  
+프로그램 실행과정에서 임시로 할당되었다가 메소드를 빠져나가면 바로 소멸되는 특성의 데이터 저장  
+ex) 지역변수, 매개변수, 메소드 정보, 연산 중 발생하는 임시 데이터  
+
+**Native Method Stack**  
+스레드에서 네이티브 방식의 메소드가 실행되는 경우 여기에 쌓임(C/C++ 메소드 등)  
+
+**Heap**  
+동적 할당 데이터 저장 (객체, 배열 등)  
+Heap에 할당된 데이터는 [GC](#garbage-collection)의 대상  
+
+**Method Area**  
+JVM이 시작할 때 생성  
+class, interface, method, field, static변수의 바이트코드 등을 보관  
+
+![jvm](https://user-images.githubusercontent.com/38305511/139861445-8f593f8e-aac0-4f66-b773-6fc434f00caf.png)  
+### JVM 프로그램 실행 과정
+1. JVM이 OS로부터 필요한 메모리 할당받음
+2. 자바 컴파일러(javac)가 자바 소스코드(.java)를 읽어들여 자바 바이트코드(.class)로 변환
+3. Class Loader로 Class 파일을 JVM으로 로딩
+4. 로딩된 Class 파일은 Execution Engine을 통해 해석됨
+5. 해석된 바이트코드는 Runtime Data Areas에 배치되고 수행이 이루어짐
