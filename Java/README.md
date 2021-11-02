@@ -1,7 +1,7 @@
 # Java 관련 지식
 - [Call by value, Call by reference](#call-by-value,-call-by-reference)
 - [Garbage Collection](#garbage-collection)
-- [JVM (Java Virtual Machine)](#jvm-(java-virtual-machine))
+- [JVM](#jvm)
 
 ## Call by value, Call by reference
 - Call by Value (값에 의한 호출)  
@@ -54,9 +54,10 @@ Young과 Old의 세부적인 동작은 다르지만 기본적으로 두가지 �
 - Sweep: 사용되지 않는 메모리 해제
 
 
-## JVM (Java Virtual Machine)
+## JVM
 
 ### JVM이란?
+- Java Virtual Machine (자바 가상머신)
 - java코드를 컴파일하여 얻은 Java Byte Code를 해석하여 OS가 이해할 수 있는 기계어로 바꿔주는 역할
 - Byte Code는 JVM 위에서 OS 상관 없이 실행됨
 - java의 큰 장점이 됨 (OS 종속되지 않음, 어떤 디바이스든 JVM 위에서 실행 가능)
