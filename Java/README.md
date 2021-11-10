@@ -2,6 +2,7 @@
 - [Call by value, Call by reference](#call-by-value,-call-by-reference)
 - [Garbage Collection](#garbage-collection)
 - [JVM](#jvm)
+- [메모리 구조](#메모리-구조)
 
 ## Call by value, Call by reference
 - Call by Value (값에 의한 호출)  
@@ -103,3 +104,34 @@ class, interface, method, field, static변수의 바이트코드 등을 보관
 3. Class Loader로 Class 파일을 JVM으로 로딩
 4. 로딩된 Class 파일은 Execution Engine을 통해 해석됨
 5. 해석된 바이트코드는 Runtime Data Areas에 배치되고 수행이 이루어짐
+
+
+## 메모리 구조
+- 프로그램 실행을 위해서는 OS가 메모리(RAM)에 공간을 할당함
+- 메모리는 명령어와 데이터들을 저장함
+
+![다운로드](https://user-images.githubusercontent.com/38305511/141121778-b5b340f1-2107-411b-8f75-0993a7e3d6d8.png)
+
+1. Code 영역
+- 실행할 프로그램의 코드 저장 (함수, 제어문, 상수)
+- 텍스트 영역이라고도 부름
+- CPU는 코드 영역에 저장된 명령어를 하나씩 가져가 처리
+
+2. Data 영역
+- 프로그램의 전역변수와 정적(Static)변수 저장
+- main 함수 전(프로그램 시작 전)에 할당되어 프로그램이 끝날 때까지 메모리에 남음
+
+3. Heap 영역
+- 사용자에 의해 관리됨 (직접 공간 할당, 해제)
+- 동적 할당 영역 (동적으로 할당할 변수들이 저장, new Class() 등)
+- 낮은 주소에서 높은 주소로 할당됨
+
+4. Stack 영역
+- 함수를 호출할 때 지역변수, 매개변수가 저장됨
+- 함수가 종료되면 해당 함수에 할당된 변수 해제
+- 높은 주소에서 낮은 주소로 할당
+- 재귀호출 시 Stack 영역에 함수의 매개,지역변수들이 계속 할당되다가 Stack Overflow가 일어날 수 있음
+
+### Overflow란?
+- Stack과 Heap은 같은 공간을 공유함
+- 각 영역이 상대 공간을 침범할 경우 overflow 발생
