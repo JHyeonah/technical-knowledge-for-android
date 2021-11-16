@@ -1,6 +1,6 @@
 # Kotlin 관련 지식
 - [Scope Function](#scope-function)
-
+- [직접참조와 get()](#직접참조와-get())
 
 ## Scope Function
 ### Scope Function(범위지정함수)이란?
@@ -61,3 +61,12 @@ val inserted: Boolean = run {
 fun printAge(person: Person) = person.run {  
   print(age)  
 }  
+
+## 직접참조와 get()
+val a = MutableLiveData<String>()  
+val b: LiveData<String> = a  
+val c: LiveData<String>  
+    get() = a  
+
+- 직접 선언 시 (a, b) 서로 동일한 객체를 바라봄
+- get() 선언 시 내부적으로 함수가 호출되고, 해당 함수의 결과값으로 a 객체 리턴
