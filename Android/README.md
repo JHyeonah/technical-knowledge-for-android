@@ -1,6 +1,7 @@
 # Android 관련 지식
 - [Android 4대 컴포넌트](#android-4대-컴포넌트)
 - [Context란](#context란)
+- [ViewModel](#viewmodel)
 
 ## Android 4대 컴포넌트
 - 각 컴포넌트들은 하나의 **독립적인 형태**로 존재
@@ -64,3 +65,11 @@ Singleton Instance -> 앱이 죽기 전까지 동일한 객체 반환
 #### 메모리 누수 
 메모리 누수를 피하기 위해 Activity Context에는 수명이 긴 참조를 피하고, 되도록이면 Application Context를 사용해야 함  
 Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하고 있을 경우 메모리 누수 발생
+
+
+## ViewModel
+- Android JetPack 구성 요소
+- 라이프사이클을 고려하여 UI관련 데이터 저장, 관리
+- 화면전환과 같이 설정이 변경되어도 Data를 유지
+- Activity가 끝날 때까지 사라지지 않고, View의 생명주기와 별개로 동작
+- ViewModel은 Activity 생명주기 외부에 존재하므로, UI Context를 ViewModel에 저장한다면 Memory Leak 
