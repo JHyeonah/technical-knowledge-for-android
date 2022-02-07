@@ -4,7 +4,7 @@
 - [JVM](#jvm)
 - [메모리 구조](#메모리-구조)
 - [OOP](#oop)
-- [String, StringBuffer, StringBuilder](#string,-stringbuffer,-stringbuilder)
+- [String StringBuffer StringBuilder](#string-stringbuffer-stringbuilder)
 
 ## Call by value, Call by reference
 - Call by Value (값에 의한 호출)  
@@ -172,7 +172,7 @@ class, interface, method, field, static변수의 바이트코드 등을 보관
 - 프로그램 개발 시 **높은 응집도**(변경 시 해당 클래스만 변경)와 **낮은 결합도**(다른 클래스들의 간섭이 낮음)가 필요한데, 낮은 결합도를 캡슐화가 유지시켜줌
 클래스 내에서 이름이 같지만 서로 다르게 동작하는 메소드를 사용하는 것 (개수나 타입이 다른 매개변수 사용)
 
-## String, StringBuffer, StringBuilder
+## String StringBuffer StringBuilder
 ### String
 - 불변(immutable)의 속성을 가짐
 - 문자열을 수정하는 시점에 새로운 String 인스턴스 생성
