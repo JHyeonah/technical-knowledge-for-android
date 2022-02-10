@@ -143,3 +143,13 @@ class, interface, method, field, static변수의 바이트코드 등을 보관
 ### String
 - 불변(immutable)의 속성을 가짐
 - 문자열을 수정하는 시점에 새로운 String 인스턴스 생성
+- 문자열 추가, 삭제, 수정 등의 연산이 빈번하게 발생하면 Heap 메모리에 임시 Garbage가 생성되어 힙 메모리 부족으로 성능에 안좋은 영향을 끼침
+
+### StringBuffer
+- 가변(mutable)성을 가짐
+- .append() .delete() 등의 API를 이용하여 동일 객체 내에서 문자열 변경이 가능
+- 동기화 키워드를 지원하여 멀티쓰레드 환경에서 안전함 (thread-safe)
+
+### StringBuilder
+- 가변성
+- 동기화를 지원하지 않지만 단일 스레드에서 성능은 StringBuffer 보다 뛰어남
