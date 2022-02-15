@@ -1,6 +1,7 @@
 # Kotlin 관련 지식
 - [Scope Function](#scope-function)
 - [직접참조와 get()](#직접참조와-get())
+- [Companion Object](#companion-object)
 
 ## Scope Function
 ### Scope Function(범위지정함수)이란?
@@ -70,3 +71,7 @@ val c: LiveData<String>
 
 - 직접 선언 시 (a, b) 서로 동일한 객체를 바라봄
 - get() 선언 시 내부적으로 함수가 호출되고, 해당 함수의 결과값으로 a 객체 리턴
+
+  
+## Companion Object
+- Kotlin에는 static이 없지만, 패키지 수준의 최상위 함수와 객체 선언을 사용 가능
