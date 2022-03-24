@@ -2,6 +2,7 @@
 - [Android 4대 컴포넌트](#android-4대-컴포넌트)
 - [Context란](#context란)
 - [ViewModel](#viewmodel)
+- [메모리 누수](#메모리-누수)
 
 ## Android 4대 컴포넌트
 - 각 컴포넌트들은 하나의 **독립적인 형태**로 존재
@@ -64,7 +65,7 @@ Singleton Instance -> 앱이 죽기 전까지 동일한 객체 반환
 
 #### 메모리 누수 
 메모리 누수를 피하기 위해 Activity Context에는 수명이 긴 참조를 피하고, 되도록이면 Application Context를 사용해야 함  
-Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하고 있을 경우 메모리 누수 발생
+Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하고 있을 경우 메모리 누수 발생 
 
 
 ## ViewModel
@@ -73,3 +74,18 @@ Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하
 - 화면전환과 같이 설정이 변경되어도 Data를 유지
 - Activity가 끝날 때까지 사라지지 않고, View의 생명주기와 별개로 동작
 - ViewModel은 Activity 생명주기 외부에 존재하므로, UI Context를 ViewModel에 저장한다면 Memory Leak 
+
+## 메모리 누수
+- 메모리가 할당되었지만, 사용이 끝난 후 되찾아올 수 없는 현상
+- 앱에서 사용하지 않는 객체가 사용중인 객체를 참조하면서 GC가 할당된 메모리를 되찾아올 수 없는 현상
+1. Broadcast Receiver
+  - 액티비티에서 BroadCast Receiver 선언 후 해제하지 않으면 메모리 릭 발생 
+2. Static Activity, 뷰 참조
+  - activity나 뷰 컴포넌트(textview 등)을 static 변수에 참조한다면 메모리 릭 발생
+3. Singleton 클래스 
+  - Singleton 클래스에 activity context를 사용하면 메모리 릭 (application context 사용해야함)  
+  - activity context를 꼭 사용해야 한다면 activity 종료 전 null 확인
+4. Inner class 참조
+  - inner class 를 static 변수로 선언하지 말아야 함
+5. 
+6. 
