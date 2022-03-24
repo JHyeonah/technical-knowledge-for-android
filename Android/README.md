@@ -86,6 +86,8 @@ Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하
   - Singleton 클래스에 activity context를 사용하면 메모리 릭 (application context 사용해야함)  
   - activity context를 꼭 사용해야 한다면 activity 종료 전 null 확인
 4. Inner class 참조
-  - inner class 를 static 변수로 선언하지 말아야 함
-5. 
-6. 
+  - inner class 를 static 변수에 넣지 말아야 함
+  - static inner class로 선언해야함
+  - activity/view에 WeakReference를 사용해야함
+5. handler를 액티비티 종료 이후에도 사용
+6. ViewModel에서 액티비티의 context나 view 참조
