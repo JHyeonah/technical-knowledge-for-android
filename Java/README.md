@@ -4,7 +4,7 @@
 - [JVM](#jvm)
 - [OOP](#oop)
 - [String StringBuffer StringBuilder](#string-stringbuffer-stringbuilder)
-- [Strong Reference, Weak Reference)(#strong-reference,-weak-reference)
+- [Strong Reference Weak Reference](#strong-reference-weak-reference)
 
 ## Call by value, Call by reference
 - Call by Value (값에 의한 호출)  
@@ -155,7 +155,7 @@ class, interface, method, field, static변수의 바이트코드 등을 보관
 - 가변성
 - 동기화를 지원하지 않지만 단일 스레드에서 성능은 StringBuffer 보다 뛰어남
 
-## Strong Reference, Weak Reference
+## Strong Reference Weak Reference
 - Strong Reference  
 일반적으로 new를 통해서 객체를 생성하게 되면 생기게 되는 참조  
 강한 참조를 통해 참조되고 있는 객체는 가비지 컬렉션의 대상에서 제외된다.  
