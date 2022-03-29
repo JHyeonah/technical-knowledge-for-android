@@ -3,6 +3,7 @@
 - [Context란](#context란)
 - [ViewModel](#viewmodel)
 - [메모리 누수](#메모리-누수)
+- [IntentFilter](#intentfilter)
 
 ## Android 4대 컴포넌트
 - 각 컴포넌트들은 하나의 **독립적인 형태**로 존재
@@ -91,3 +92,9 @@ Context가 정리되지 않은 호출로 생성된 무언가를 오래 유지하
   - activity/view에 WeakReference를 사용해야함
 5. handler를 액티비티 종료 이후에도 사용
 6. ViewModel에서 액티비티의 context나 view 참조
+
+## IntentFilter
+암시적 인텐트를 통해 사용자가 어떤 앱을 사용할 지 선택하도록 할 때 필요  
+안드로이드 내부에서 수많은 앱들에 의해 수많은 인텐트가 발생, 이 중 자신에게 필요한 인텐트만 받음  
+암시적 인텐트 : 컴포넌트의 이름을 알 수 없을 때 사용. 컴포넌트가 처리할 작업만을 명시  
+
