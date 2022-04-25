@@ -71,7 +71,7 @@ val c: LiveData<String>
 
 - 직접 선언 시 (a, b) 서로 동일한 객체를 바라봄
 - get() 선언 시 내부적으로 함수가 호출되고, 해당 함수의 결과값으로 a 객체 리턴
-
+- int 같은 primitive type 이고, a의 초기값이 이후에 변경된다면 get() 호출 시 변경된 값을 가져옴, 직접 선언 시 원래 변수의 값이 변경되어도 변화 없음
   
 ## Companion Object
 - Kotlin에는 static이 없지만, 패키지 수준의 최상위 함수와 객체 선언을 사용 가능
