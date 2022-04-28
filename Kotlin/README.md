@@ -74,4 +74,8 @@ val c: LiveData<String>
 - int 같은 primitive type 이고, a의 초기값이 이후에 변경된다면 get() 호출 시 변경된 값을 가져옴, 직접 선언 시 원래 변수의 값이 변경되어도 변화 없음
   
 ## Companion Object
-- Kotlin에는 static이 없지만, 패키지 수준의 최상위 함수와 객체 선언을 사용 가능
+- Kotlin에는 static이 없지만, 패키지 수준의 최상위 함수와 객체 선언을 사용 가능  
+- class 대신 object를 사용하면, 싱클턴 선언 가능
+- companion object는 클래스 내부에 정의되는 object의 특수한 형태
+- **클래스가 메모리에 적재되면서 함께 생성**되는 **동반(companion)** 객체
+- const val로 선언된 상수는 자바로 변경 시 static 변수가 됨 
