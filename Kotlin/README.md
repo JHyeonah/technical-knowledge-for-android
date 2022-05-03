@@ -2,6 +2,7 @@
 - [Scope Function](#scope-function)
 - [직접참조와 get()](#직접참조와-get())
 - [Companion Object](#companion-object)
+- [Sealed와 Enum](#sealed와-enum)
 
 ## Scope Function
 ### Scope Function(범위지정함수)이란?
@@ -79,3 +80,15 @@ val c: LiveData<String>
 - companion object는 클래스 내부에 정의되는 object의 특수한 형태
 - **클래스가 메모리에 적재되면서 함께 생성**되는 **동반(companion)** 객체
 - const val로 선언된 상수는 자바로 변경 시 static 변수가 됨 
+  
+## Sealed와 Enum
+### Sealed Class 
+Super Class를 상속받는 Child class 종류 제한 가능  
+Sealed Class 내에 정의된 class 이외의 형태는 가질수 없는, 제한된 계층구조 정의 (when문 사용시 else 필요없음)  
+컴파일러에게 sealed class 안의 자식 말고 없다고 알려줌 (when문 사용시 else 필요없음)  
+같은 서브클래스에서 서로 다른 값을 줄 수 있음
+  
+### Enum Class  
+열거형, 각 서브 클래스들이 상수화 된 클래스  
+각 서브클래스들이 고정적인 형태를 지님  
+각 상수들이 부모 타입의 객체  
