@@ -5,6 +5,7 @@
 - [Sealed와 Enum](#sealed와-enum)
 - [Volatile](#volatile)
 - [Inline](#inline)
+- [Invoke](#invoke)
 
 ## Scope Function
 ### Scope Function(범위지정함수)이란?
@@ -118,3 +119,26 @@ CPU 캐시를 참조하는 것보다 메인 메모리를 참조하는 것이 비
 Inline 함수로 정의된 함수는 컴파일 단계에서 호출하는 방식이 아니라 **코드 자체가 복사되는 방식**으로 컴파일됨  
 자바로 변환될 때 Function 인스턴스를 만들지 않고 함수 내부에 바로 삽입됨  
 private 키워드를 사용하여 함수 정의 불가 -> internal로 가능
+  
+## Invoke
+  - 이름 없이 간편하게 호출될 수 있는 함수
+  ~~~java
+class Test { 
+      operator fun invoke(str: String) {
+        print(str)
+      }
+}
+
+fun main() {
+      val test = Test()
+      test("hello world")
+}
+  ~~~  
+위와 같이 함수 이름 생략 가능
+#### Operator 키워드
+  - 연산자 : 이름을 부여한 함수임에도 불구하고 실행을 간편하게 할 수 있도록 지원  
+  - 연산자에는 +, -, invoke 등이 있는데 이러한 연산자를 overloading 할 수 있도록 제공하는 키워드
+  
+#### 람다와 invoke  
+람다는 컴파일되면서 코틀린에 정의된 FunctionN(P1, ..., PN, R) 형태로 변환됨  
+Function 인터페이스에는 invoke만이 정의되어 있음
