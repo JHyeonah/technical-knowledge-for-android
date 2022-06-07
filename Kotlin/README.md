@@ -6,6 +6,7 @@
 - [Volatile](#volatile)
 - [Inline](#inline)
 - [Invoke](#invoke)
+- [Value class](#value-class)
 
 ## Scope Function
 ### Scope Function(범위지정함수)이란?
