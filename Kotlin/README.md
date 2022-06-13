@@ -143,3 +143,5 @@ fun main() {
 #### 람다와 invoke  
 람다는 컴파일되면서 코틀린에 정의된 FunctionN(P1, ..., PN, R) 형태로 변환됨  
 Function 인터페이스에는 invoke만이 정의되어 있음
+  
+## Value class
