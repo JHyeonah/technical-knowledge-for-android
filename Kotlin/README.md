@@ -145,3 +145,5 @@ fun main() {
 Function 인터페이스에는 invoke만이 정의되어 있음
   
 ## Value class
+함수 생성 시 마다 객체를 생성하여 호출하는 비용을 줄여줌  
+JVM이 바이트코드로 컴파일하는 과정에서 객체를 제거하고 value class의 프로퍼티로 대체
