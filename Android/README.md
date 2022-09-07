@@ -5,6 +5,7 @@
 - [메모리 누수](#메모리-누수)
 - [IntentFilter](#intentfilter)
 - [RxJava Scheduler](#rxjava-scheduler)
+- [Koin](#koin)
 
 ## Android 4대 컴포넌트
 - 각 컴포넌트들은 하나의 **독립적인 형태**로 존재
@@ -121,3 +122,14 @@ unit test 시 사용
 
 5. newThread  
 요청을 받을 때마다 매번 새로운 스레드 생성  
+
+## Koin
+DI 라이브러리  
+- 장점 
+1. 러닝커브가 낮음
+2. Kotlin 베이스
+3. 별도의 어노테이션을 사용하지 않아 컴파일 시간 단축됨
+
+- 단점
+1. 런타임에 에러가 날 수 있음
+2. 런타임에 의존성 주입을 하므로 퍼포먼스가 떨어질 수 
